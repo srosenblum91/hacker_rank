@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int N = scanner.nextInt();
+        String s;
+        // s = scanner.nextLine();
+        String str;
+
+        
+        for(int i=0; i<=N; i++){
+            StringBuilder sb = new StringBuilder();
+            if(scanner.hasNextLine()){
+                s = scanner.nextLine();
+
+                if(s.length() == 0){
+                    s = scanner.nextLine();
+                }
+            
+                
+            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+            
+
+            for(int n=0; n < s.length(); n++){             
+                if(n%2==0){
+                    str = String.valueOf(s.charAt(n));
+                    sb.append(str);
+                }
+            }
+            
+            sb.append(" ");
+
+            for(int n=0; n < s.length(); n++){             
+                if(n%2!=0){
+                    str = String.valueOf(s.charAt(n));
+                    sb.append(str);
+                }
+            }
+            
+            System.out.println(sb);
+            }
+        }
+        scanner.close();
+    }
+}
